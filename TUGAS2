@@ -1,0 +1,55 @@
+class Mahasiswa:
+    def __init__(self, nama, nim, jurusan):
+        self.nama = nama
+        self.nim = nim
+        self.jurusan = jurusan
+
+    def tampilkan_info(self):
+        print("Nama:", self.nama)
+        print("NIM:", self.nim)
+        print("Jurusan:", self.jurusan.NamaJurusan)
+#method tampilkan_info digunakan untuk menampilkan informasi tentang objek Mahasiswa
+#method ini mencetak nilai atribut nama, nim, dan NamaJurusan dari objek jurusan yang merupakan objek dari kelas Jurusan
+
+class Jurusan:
+    def __init__(self, nama_jurusan):
+        self.NamaJurusan = nama_jurusan
+        self.DaftarMahasiswa = []
+#mendefinisikan kelas Jurusan. Kelas ini memiliki dua atribut: NamaJurusan dan DaftarMahasiswa
+#NamaJurusan merupakan atribut yang menyimpan nama jurusan
+#DaftarMahasiswa merupakan atribut berupa daftar yang akan digunakan untuk menyimpan objek Mahasiswa yang terdaftar di jurusan tersebut.
+
+    def tambah_mahasiswa(self, mahasiswa):
+        self.DaftarMahasiswa.append(mahasiswa)
+#method ini digunakan untuk menambahkan objek Mahasiswa ke dalam DaftarMahasiswa yang merupakan atribut dari kelas Jurusan
+#Objek Mahasiswa yang ditambahkan akan dimasukkan ke dalam daftar
+
+
+    def tampilkan_daftar_mahasiswa(self):
+        print("Daftar Mahasiswa di Jurusan", self.NamaJurusan)
+        for mahasiswa in self.DaftarMahasiswa:
+            print("- Nama:", mahasiswa.nama)
+            print("  NIM:", mahasiswa.nim)
+#method ini digunakan untuk mencetak daftar mahasiswa yang terdaftar dalam jurusan
+#Method ini mencetak nama dan nim dari setiap objek Mahasiswa dalam DaftarMahasiswa
+
+class Universitas:
+    def __init__(self, nama_universitas):
+        self.NamaUniversitas = nama_universitas
+        self.DaftarJurusan = []
+#Kode di atas mendefinisikan kelas Universitas. Kelas ini memiliki dua atribut: NamaUniversitas dan DaftarJurusan
+#NamaUniversitas merupakan atribut yang menyimpan nama universitas
+#DaftarJurusan merupakan atribut berupa daftar yang akan digunakan untuk menyimpan objek Jurusan yang ada di universitas
+
+    def tambah_jurusan(self, jurusan):
+        self.DaftarJurusan.append(jurusan)
+#method ini digunakan untuk mencetak daftar jurusan yang ada di dalam universitas
+#Pada baris pertama, pesan "Daftar Jurusan di Universitas" akan dicetak, diikuti dengan nama universitas yang disimpan dalam atribut NamaUniversitas
+#Kemudian, menggunakan loop for, kita iterasi melalui setiap objek Jurusan yang ada di dalam atribut DaftarJurusan
+#Pada setiap iterasi, kita mencetak nama jurusan menggunakan atribut NamaJurusan dari objek Jurusan
+
+    def tampilkan_daftar_jurusan(self):
+        print("Daftar Jurusan di Universitas", self.NamaUniversitas)
+        for jurusan in self.DaftarJurusan:
+            print("- Nama Jurusan:", jurusan.NamaJurusan)
+#method ini akan menampilkan daftar jurusan di universitas 
